@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Mutation } from 'react-apollo';
 
 import TextField from 'components/TextField';
+import TextArea from 'components/TextArea';
 import Button from 'components/Button';
 import TitlePanel from 'components/TitlePanel';
 import Wrapper from 'components/Wrapper';
@@ -47,7 +48,14 @@ class CreatePost extends Component {
                 placeholder="enter title"
               />
 
-              <TextField
+              {/* <TextField
+                name="body"
+                onChange={this.handleOnChange}
+                value={body}
+                placeholder="enter post"
+              /> */}
+
+              <TextArea
                 name="body"
                 onChange={this.handleOnChange}
                 value={body}
