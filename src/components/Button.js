@@ -4,8 +4,9 @@ import styled from 'styled-components';
 const StyledButton = styled.button`
   background: #383838;
   color: #f8f8f8;
-  padding: 5px;
+  padding: 10px 15px;
   border: 1px solid #383838;
+  border-radius: 5px;
 
   ${props => {
     if (props.circle) {
