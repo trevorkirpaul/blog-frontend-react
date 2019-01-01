@@ -40,7 +40,6 @@ class CreatePost extends Component {
       <Mutation mutation={CREATE_POST}>
         {(createPost, { data }) => (
           <Wrapper>
-            {console.log(data)}
             <TextField
               name="title"
               onChange={this.handleOnChange}
