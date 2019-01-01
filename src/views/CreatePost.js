@@ -1,25 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
 
 import TextField from 'components/TextField';
 import Button from 'components/Button';
+import { CREATE_POST } from 'graphQL/mutations';
 
 const Wrapper = styled.div``;
-
-const CREATE_POST = gql`
-  mutation CreatePost($title: String, $body: String, $author: ID) {
-    createPost(title: $title, body: $body, author: $author) {
-      title
-      body
-      id
-      author {
-        email
-      }
-    }
-  }
-`;
 
 class CreatePost extends Component {
   constructor(props) {

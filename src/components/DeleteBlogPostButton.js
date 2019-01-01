@@ -1,29 +1,10 @@
 import React from 'react';
-import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
 
+import { DELETE_POST } from 'graphQL/mutations';
+import { GET_POSTS } from 'graphQL/queries';
+
 import Button from './Button';
-
-const GET_POSTS = gql`
-  query {
-    posts {
-      title
-      body
-      id
-      author {
-        email
-      }
-    }
-  }
-`;
-
-const DELETE_POST = gql`
-  mutation DeletePost($postID: ID) {
-    deletePost(postID: $postID) {
-      id
-    }
-  }
-`;
 
 const DeleteBlogPostButton = props => {
   return (

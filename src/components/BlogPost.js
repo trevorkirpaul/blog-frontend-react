@@ -5,26 +5,46 @@ import DeleteBlogPostButton from './DeleteBlogPostButton';
 
 const Wrapper = styled.li`
   background: ${({ index }) => (index % 2 === 0 ? null : '#E8EAF6')};
-  padding: 5px 15px;
+  padding: 15px 25px;
   display: flex;
   justify-content: space-between;
 `;
 
 const Section = styled.div``;
 
-const Left = styled(Section)``;
-const Right = styled(Section)``;
+const Left = styled(Section)`
+  max-width: 500px;
+`;
+const Right = styled(Section)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-const Title = styled.h2``;
+const Title = styled.h2`
+  margin-bottom: 15px;
+`;
 
-const BodyText = styled.p``;
+const BodyText = styled.p`
+  margin-bottom: 10px;
+`;
+
+const Boldify = styled.span`
+  font-weight: 600;
+`;
 
 const BlogPost = ({ title, body, author: { email }, index, id }) => (
   <Wrapper index={index}>
     <Left>
-      <Title>{title}</Title>
-      <BodyText>body: {body}</BodyText>
-      <BodyText>from: {email}</BodyText>
+      <Title>
+        {index + 1}. {title}
+      </Title>
+      <BodyText>
+        <Boldify>body:</Boldify> {body}
+      </BodyText>
+      <BodyText>
+        <Boldify>from:</Boldify> {email}
+      </BodyText>
     </Left>
 
     <Right>

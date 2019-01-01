@@ -1,22 +1,9 @@
 import React from 'react';
-import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
 import Loading from 'components/Loading';
 import BlogPost from 'components/BlogPost';
-
-const GET_POSTS = gql`
-  query {
-    posts {
-      title
-      body
-      id
-      author {
-        email
-      }
-    }
-  }
-`;
+import { GET_POSTS } from 'graphQL/queries';
 
 const BlogPosts = () => {
   return (
@@ -32,8 +19,6 @@ const BlogPosts = () => {
 
         return (
           <div>
-            <h1>Blog Posts</h1>
-
             <ul>
               {data.posts &&
                 data.posts.map((post, index) => (
