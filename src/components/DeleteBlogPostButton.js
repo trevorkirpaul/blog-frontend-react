@@ -37,8 +37,16 @@ const DeleteBlogPostButton = props => {
           },
         }
       ) => {
+        /*
+          We'll use the `GET_POSTS` query to pull the posts
+          stored in the cache then filter out the post we just
+          successfully deleted.
+
+          We'll know it was a successful delete bc the post id
+          is coming back to us from the mutation response
+        */
+
         const { posts } = cache.readQuery({ query: GET_POSTS });
-        console.log(posts);
         return cache.writeQuery({
           query: GET_POSTS,
           data: {
